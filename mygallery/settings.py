@@ -75,17 +75,23 @@ WSGI_APPLICATION = 'mygallery.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mygallery',
-        'USER': 'moringa',
-        'PASSWORD':'72330000',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME', 'dcprl34on3p0lt'),
+        'USER': os.environ.get('DB_USER', 'qekogesbnbrskv'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'f3934df78e0058b41c9adbe87451635aa913fe7f9504e477266348128cb7ff6c'),
+        'HOST': os.environ.get('DB_HOST', 'ec2-34-192-30-15.compute-1.amazonaws.com'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+        'TEST': {
+            'NAME': 'test_mygallery-app'
+        }
+    },
 }
 
+ALLOWED_HOSTS = ['*']
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
