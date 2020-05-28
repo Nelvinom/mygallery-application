@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST', 'ec2-34-192-30-15.compute-1.amazonaws.com'),
         'PORT': os.environ.get('DB_PORT', '5432'),
         'TEST': {
-            'NAME': 'test_mygallery-app'
+            'NAME': 'test_mygallery'
         }
     },
 }
