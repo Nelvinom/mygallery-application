@@ -137,3 +137,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# TYPE DATABASE USER CIDR-ADDRESS  METHOD
+local all all md5
+host  all  all 0.0.0.0/0 md5
